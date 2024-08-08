@@ -84,6 +84,49 @@
             max-width: 300px;
             height: auto;
         }
+        .expertise-banner {
+            background-color: #f05454;
+            color: #fff;
+            padding: 20px;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+        .expertise-banner h4 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .expertise-banner .marquee {
+            display: inline-block;
+            animation: marquee 90s linear infinite;
+        }
+        @keyframes marquee {
+            from {
+                transform: translateX(0%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+        .expertise-item {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 50px;
+            text-align: center;
+        }
+        .expertise-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        .expertise-item .expertise-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .expertise-item .expertise-description {
+            font-size: 14px;
+        }
         @media (max-width: 768px) {
             header {
                 padding: 20px 40px;
@@ -122,6 +165,12 @@
                 font-size: 14px;
             }
         }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -133,25 +182,88 @@
             <a href="#home">Home</a>
             <a href="#services">Services</a>
             <a href="#portfolio">Portfolio</a>
-            <a href="#experience">Experience</a>
             <a href="#contact">Contact</a>
-            <a href="#en">EN</a>
         </nav>
     </header>
-
+    
     <section class="hero">
         <div class="text">
             <p>Hello</p>
             <h1>I'm <span>Caro Rocha</span></h1>
-            <p>I'm a beginner web developer with demonstrated experience in shaping business solutions.</p>
+            <p>I'm a beginner web developer, with demonstrated experience in shaping business solutions.</p>
             <button>Let's Talk</button>
         </div>
         <div class="image">
             <img src="Caro_Rocha_1.png" alt="Caro Rocha">
         </div>
     </section>
+    
+    <section class="expertise-banner">
+        <div class="marquee">
+            <div class="expertise-item">
+                <img src="https://example.com/powerbi-icon.png" alt="Power BI Icon">
+                <div class="expertise-title">Power BI</div>
+                <div class="expertise-description">Data visualization and business analytics</div>
+            </div>
+            <div class="expertise-item">
+                <img src="https://example.com/powerbi-service-icon.png" alt="Power BI Service Icon">
+                <div class="expertise-title">Power BI Service</div>
+                <div class="expertise-description">Collaborative data sharing and reporting</div>
+            </div>
+            <div class="expertise-item">
+                <img src="https://example.com/html-icon.png" alt="HTML Icon">
+                <div class="expertise-title">HTML</div>
+                <div class="expertise-description">Webpage structure and content design</div>
+            </div>
+            <div class="expertise-item">
+                <img src="https://example.com/css-icon.png" alt="CSS Icon">
+                <div class="expertise-title">CSS</div>
+                <div class="expertise-description">Styling and layout for web pages</div>
+            </div>
+            <div class="expertise-item">
+                <img src="https://example.com/js-icon.png" alt="JavaScript Icon">
+                <div class="expertise-title">JavaScript</div>
+                <div class="expertise-description">Interactive and dynamic web elements</div>
+            </div>
+            <div class="expertise-item">
+                <img src="https://example.com/php-icon.png" alt="PHP Icon">
+                <div class="expertise-title">PHP</div>
+                <div class="expertise-description">Server-side scripting and web development</div>
+            </div>
+            <div class="expertise-item">
+                <img src="https://example.com/python-icon.png" alt="Python Icon">
+                <div class="expertise-title">Python</div>
+                <div class="expertise-description">Programming and automation</div>
+            </div>
+            <div class="expertise-item">
+                <img src="https://example.com/sql-icon.png" alt="SQL Server Icon">
+                <div class="expertise-title">SQL Server</div>
+                <div class="expertise-description">Database management and querying</div>
+            </div>
+            <div class="expertise-item">
+                <img src="https://example.com/looker-icon.png" alt="Looker Studio Icon">
+                <div class="expertise-title">Looker Studio</div>
+                <div class="expertise-description">Data analytics and dashboard creation</div>
+            </div>
+            <div class="expertise-item">
+                <img src="https://example.com/power-automate-icon.png" alt="Power Automate Icon">
+                <div class="expertise-title">Power Automate</div>
+                <div class="expertise-description">Workflow automation and integration</div>
+            </div>
+            <div class="expertise-item">
+                <img src="https://example.com/power-apps-icon.png" alt="Power Apps Icon">
+                <div class="expertise-title">Power Apps</div>
+                <div class="expertise-description">App creation for business solutions</div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 RochaSolutions</p>
+    </footer>
+
 </body>
 </html>
+
 
 
 

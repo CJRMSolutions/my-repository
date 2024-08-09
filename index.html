@@ -127,6 +127,56 @@
         .expertise-item .expertise-description {
             font-size: 14px;
         }
+        .work-preview-container {
+            position: relative;
+            padding: 50px 80px;
+            overflow: hidden;
+        }
+        .work-preview {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            will-change: transform;
+        }
+        .work-preview .card {
+            width: calc(100% / 3 - 20px); /* Width for 3 cards with space between */
+            height: calc(200px * 1.3); /* Increase height by 30% */
+            margin: 0 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            flex-shrink: 0; /* Prevent cards from shrinking */
+        }
+        .work-preview .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .work-preview .card:hover {
+            transform: scale(1.05);
+        }
+        .work-preview .card-title {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .arrow-left {
+            left: 10px;
+        }
+        .arrow-right {
+            right: 10px;
+        }
         @media (max-width: 768px) {
             header {
                 padding: 20px 40px;
@@ -139,6 +189,10 @@
             }
             .hero p {
                 font-size: 16px;
+            }
+            .work-preview .card {
+                width: calc(100% / 3 - 10px);
+                height: calc(150px * 1.3); /* Increase height by 30% */
             }
         }
         @media (max-width: 480px) {
@@ -163,6 +217,10 @@
                 width: 100%;
                 padding: 10px;
                 font-size: 14px;
+            }
+            .work-preview .card {
+                width: calc(100% / 3 - 5px);
+                height: calc(120px * 1.3); /* Increase height by 30% */
             }
         }
         footer {
@@ -201,70 +259,112 @@
     <section class="expertise-banner">
         <div class="marquee">
             <div class="expertise-item">
-                <img src="https://example.com/powerbi-icon.png" alt="Power BI Icon">
+                <img src="microsoft-power-bi-removebg-preview.png" alt="Power BI Icon">
                 <div class="expertise-title">Power BI</div>
                 <div class="expertise-description">Data visualization and business analytics</div>
             </div>
             <div class="expertise-item">
-                <img src="https://example.com/powerbi-service-icon.png" alt="Power BI Service Icon">
+                <img src="microsoft-power-bi-removebg-preview.png" alt="Power BI Service Icon">
                 <div class="expertise-title">Power BI Service</div>
                 <div class="expertise-description">Collaborative data sharing and reporting</div>
             </div>
             <div class="expertise-item">
-                <img src="https://example.com/html-icon.png" alt="HTML Icon">
+                <img src="HTML5.png" alt="HTML Icon">
                 <div class="expertise-title">HTML</div>
                 <div class="expertise-description">Webpage structure and content design</div>
             </div>
             <div class="expertise-item">
-                <img src="https://example.com/css-icon.png" alt="CSS Icon">
+                <img src="CSS-removebg-preview.png" alt="CSS Icon">
                 <div class="expertise-title">CSS</div>
                 <div class="expertise-description">Styling and layout for web pages</div>
             </div>
             <div class="expertise-item">
-                <img src="https://example.com/js-icon.png" alt="JavaScript Icon">
+                <img src="Javascript-removebg-preview.png" alt="JavaScript Icon">
                 <div class="expertise-title">JavaScript</div>
                 <div class="expertise-description">Interactive and dynamic web elements</div>
             </div>
             <div class="expertise-item">
-                <img src="https://example.com/php-icon.png" alt="PHP Icon">
+                <img src="php-removebg-preview.png" alt="PHP Icon">
                 <div class="expertise-title">PHP</div>
                 <div class="expertise-description">Server-side scripting and web development</div>
             </div>
             <div class="expertise-item">
-                <img src="https://example.com/python-icon.png" alt="Python Icon">
+                <img src="phyton-removebg-preview.png" alt="Python Icon">
                 <div class="expertise-title">Python</div>
                 <div class="expertise-description">Programming and automation</div>
             </div>
             <div class="expertise-item">
-                <img src="https://example.com/sql-icon.png" alt="SQL Server Icon">
+                <img src="SQL_Server-removebg-preview.png" alt="SQL Server Icon">
                 <div class="expertise-title">SQL Server</div>
                 <div class="expertise-description">Database management and querying</div>
             </div>
             <div class="expertise-item">
-                <img src="https://example.com/looker-icon.png" alt="Looker Studio Icon">
+                <img src="Looker.png" alt="Looker Studio Icon">
                 <div class="expertise-title">Looker Studio</div>
                 <div class="expertise-description">Data analytics and dashboard creation</div>
             </div>
             <div class="expertise-item">
-                <img src="https://example.com/power-automate-icon.png" alt="Power Automate Icon">
+                <img src="power-automate-icon-removebg-preview.png" alt="Power Automate Icon">
                 <div class="expertise-title">Power Automate</div>
                 <div class="expertise-description">Workflow automation and integration</div>
             </div>
             <div class="expertise-item">
-                <img src="https://example.com/power-apps-icon.png" alt="Power Apps Icon">
+                <img src="PowerApps-removebg-preview.png" alt="Power Apps Icon">
                 <div class="expertise-title">Power Apps</div>
                 <div class="expertise-description">App creation for business solutions</div>
             </div>
         </div>
     </section>
+
+    <section class="work-preview-container">
+        <button class="arrow arrow-left" onclick="scrollLeft()">&#10094;</button>
+        <div class="work-preview">
+            <div class="card">
+                <img src="Payroll.png" alt="Work 1">
+                <div class="card-title">Payroll Solutions</div>
+            </div>
+            <div class="card">
+                <img src="https://example.com/your-work-2.png" alt="Work 2">
+                <div class="card-title">Project 2</div>
+            </div>
+            <div class="card">
+                <img src="https://example.com/your-work-3.png" alt="Work 3">
+                <div class="card-title">Project 3</div>
+            </div>
+        </div>
+        <button class="arrow arrow-right" onclick="scrollRight()">&#10095;</button>
+    </section>
+
     <footer>
         <p>&copy; 2024 RochaSolutions</p>
     </footer>
 
+    <script>
+        let scrollAmount = 0;
+        const container = document.querySelector('.work-preview');
+        const cardWidth = container.querySelector('.card').offsetWidth + 20; // Include margin
+
+        function scrollRight() {
+            const maxScroll = container.scrollWidth - container.clientWidth;
+            if (scrollAmount < maxScroll) {
+                scrollAmount += cardWidth * 3; // Scroll by the width of 3 cards
+                container.style.transform = `translateX(-${scrollAmount}px)`;
+            }
+        }
+
+        function scrollLeft() {
+            if (scrollAmount > 0) {
+                scrollAmount -= cardWidth * 3; // Scroll by the width of 3 cards
+                if (scrollAmount < 0) {
+                    scrollAmount = 0;
+                }
+                container.style.transform = `translateX(-${scrollAmount}px)`;
+            }
+        }
+    </script>
+
 </body>
 </html>
-
-
 
 
 

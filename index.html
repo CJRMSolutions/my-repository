@@ -138,27 +138,34 @@
             will-change: transform;
         }
         .work-preview .card {
-            width: calc(100% / 3 - 20px); /* Width for 3 cards with space between */
-            height: calc(200px * 1.3); /* Increase height by 30% */
+            width: calc(100% / 3 - 20px); 
+            height: calc(200px * 1.3); 
             margin: 0 10px;
             border-radius: 10px;
-            overflow: hidden;
+            background-color: #f4f4f9; 
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-            flex-shrink: 0; /* Prevent cards from shrinking */
-        }
-        .work-preview .card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            flex-shrink: 0; 
         }
         .work-preview .card:hover {
-            transform: scale(1.05);
+            background-color: #f05454; 
+            color: #fff; 
+            transform: scale(1.05); 
         }
         .work-preview .card-title {
-            text-align: center;
-            margin-top: 10px;
+            font-size: 18px;
             font-weight: bold;
+            text-align: center;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
         }
         .arrow {
             position: absolute;
@@ -192,7 +199,7 @@
             }
             .work-preview .card {
                 width: calc(100% / 3 - 10px);
-                height: calc(150px * 1.3); /* Increase height by 30% */
+                height: calc(150px * 1.3); 
             }
         }
         @media (max-width: 480px) {
@@ -220,7 +227,7 @@
             }
             .work-preview .card {
                 width: calc(100% / 3 - 5px);
-                height: calc(120px * 1.3); /* Increase height by 30% */
+                height: calc(120px * 1.3);
             }
         }
         footer {
@@ -320,16 +327,16 @@
         <button class="arrow arrow-left" onclick="scrollLeft()">&#10094;</button>
         <div class="work-preview">
             <div class="card">
-                <img src="Payroll.png" alt="Work 1">
+                <div class="card-title">Web Development</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Workload Automation</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Forecast Solutions</div>
+            </div>
+            <div class="card">
                 <div class="card-title">Payroll Solutions</div>
-            </div>
-            <div class="card">
-                <img src="https://example.com/your-work-2.png" alt="Work 2">
-                <div class="card-title">Project 2</div>
-            </div>
-            <div class="card">
-                <img src="https://example.com/your-work-3.png" alt="Work 3">
-                <div class="card-title">Project 3</div>
             </div>
         </div>
         <button class="arrow arrow-right" onclick="scrollRight()">&#10095;</button>
@@ -342,19 +349,19 @@
     <script>
         let scrollAmount = 0;
         const container = document.querySelector('.work-preview');
-        const cardWidth = container.querySelector('.card').offsetWidth + 20; // Include margin
+        const cardWidth = container.querySelector('.card').offsetWidth + 20; 
 
         function scrollRight() {
             const maxScroll = container.scrollWidth - container.clientWidth;
             if (scrollAmount < maxScroll) {
-                scrollAmount += cardWidth * 3; // Scroll by the width of 3 cards
+                scrollAmount += cardWidth * 3; 
                 container.style.transform = `translateX(-${scrollAmount}px)`;
             }
         }
 
         function scrollLeft() {
             if (scrollAmount > 0) {
-                scrollAmount -= cardWidth * 3; // Scroll by the width of 3 cards
+                scrollAmount -= cardWidth * 3; 
                 if (scrollAmount < 0) {
                     scrollAmount = 0;
                 }
